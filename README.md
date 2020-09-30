@@ -1,16 +1,9 @@
 # training-data-analyst 
 
 Labs and demos for Google Cloud Platform courses (http://cloud.google.com/training).
+Forked from official Google Cloud organisation to make spot-fixes concerning Python3 compatibility.
 
-## Contributing to this repo
 
-* Small edits are welcome! Please submit a Pull-Request. See also [CONTRIBUTING.md](./CONTRIBUTING.md)
-* For larger edits, please submit an issue, and we will create a branch for you. Then, get the code reviewed (in the branch) before submitting.
-
-## Organization of this repo
-
-### Try out the code on Google Cloud Platform
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.png)](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/GoogleCloudPlatform/training-data-analyst.git)
 
 ## Courses
 Code for the following courses is included in this repo:
