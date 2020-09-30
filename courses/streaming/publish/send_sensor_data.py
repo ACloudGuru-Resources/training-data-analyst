@@ -20,6 +20,7 @@ import logging
 import argparse
 import datetime
 from google.cloud import pubsub
+import sys
 
 TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 TOPIC = 'sandiego'
@@ -89,10 +90,16 @@ if __name__ == '__main__':
    publisher = pubsub.PublisherClient()
    event_type = publisher.topic_path(args.project,TOPIC)
    try:
-      publisher.get_topic(event_type)
+      if sys.version_info[0] < 3:
+        publisher.get_topic(event_type)
+      if sys.version_info[0] >= 3:
+        publisher.get_topic(topic=event_type)
       logging.info('Reusing pub/sub topic {}'.format(TOPIC))
    except:
-      publisher.create_topic(event_type)
+      if sys.version_info[0] < 3:
+        publisher.create_topic(event_type)
+      if sys.version_info[0] >= 3:
+        publisher.create_topic(topic=event_type)
       logging.info('Creating pub/sub topic {}'.format(TOPIC))
 
    # notify about each line in the input file
